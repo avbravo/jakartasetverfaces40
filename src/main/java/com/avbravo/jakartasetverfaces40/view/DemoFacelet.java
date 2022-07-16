@@ -77,18 +77,18 @@ public class DemoFacelet extends Facelet {
             
 
             // Set output.
-            UIOutput output1 = new UIOutput();
+            UIOutput outputColumn = new UIOutput();
             ValueBinding myItem
                     = FacesContext
                             .getCurrentInstance()
                             .getApplication()
                             .createValueBinding("#{myItem[" + i + "]}");
-            output.setValueBinding("value", myItem);
+            outputColumn.setValueBinding("value", myItem);
 
             // Set column.
             UIColumn column = new UIColumn();
             column.setHeader(header);
-            column.getChildren().add(output);
+            column.getChildren().add(outputColumn);
 
             // Add column.
           dataTable.getChildren().add(column);
