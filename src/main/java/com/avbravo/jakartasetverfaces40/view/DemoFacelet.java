@@ -55,6 +55,7 @@ public class DemoFacelet extends Facelet {
 
         output.setValue("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
         rootChildren.add(output);
+        
 
         HtmlBody body = components.create(HtmlBody.COMPONENT_TYPE);
         rootChildren.add(body);
@@ -76,37 +77,37 @@ public class DemoFacelet extends Facelet {
         /**
          * Datatable
          */
-        HtmlDataTable dataTable = new HtmlDataTable();
-        // Get amount of columns.
-       
-        int columns = ((List) list.get(0)).size();
-
-        // Set columns.
-        for (int i = 0; i < columns; i++) {
-
-            // Set header (optional).
-            UIOutput header = new UIOutput();
-            header.setValue("idoceano");
-            
-
-            // Set output.
-            UIOutput outputColumn = new UIOutput();
-            ValueBinding myItem
-                    = FacesContext
-                            .getCurrentInstance()
-                            .getApplication()
-                            .createValueBinding("#{myItem[" + i + "]}");
-            outputColumn.setValueBinding("value", myItem);
-
-            // Set column.
-            UIColumn column = new UIColumn();
-            column.setHeader(header);
-            column.getChildren().add(outputColumn);
-
-            // Add column.
-          dataTable.getChildren().add(column);
-        }
-form.getChildren().add(dataTable);
+//        HtmlDataTable dataTable = new HtmlDataTable();
+//        // Get amount of columns.
+//       
+//        int columns = ((List) list.get(0)).size();
+//
+//        // Set columns.
+//        for (int i = 0; i < columns; i++) {
+//
+//            // Set header (optional).
+//            UIOutput header = new UIOutput();
+//            header.setValue("idoceano");
+//            
+//
+//            // Set output.
+//            UIOutput outputColumn = new UIOutput();
+//            ValueBinding myItem
+//                    = FacesContext
+//                            .getCurrentInstance()
+//                            .getApplication()
+//                            .createValueBinding("#{myItem[" + i + "]}");
+//            outputColumn.setValueBinding("value", myItem);
+//
+//            // Set column.
+//            UIColumn column = new UIColumn();
+//            column.setHeader(header);
+//            column.getChildren().add(outputColumn);
+//
+//            // Add column.
+//          dataTable.getChildren().add(column);
+//        }
+//form.getChildren().add(dataTable);
 
 
 /**
@@ -131,7 +132,7 @@ form.getChildren().add(dataTable);
         // Create <h:outputText value="#{dataItem.id}"> for the body of 'ID' column.
         HtmlOutputText idOutput = new HtmlOutputText();
         idOutput.setValueExpression("value",
-            createValueExpression("#{dataItem.idoceano}", Long.class));
+            createValueExpression("#{dataItem.idoceano}", String.class));
         idColumn.getChildren().add(idOutput);
 
         // Create <h:column> for 'Name' column.
@@ -153,7 +154,7 @@ form.getChildren().add(dataTable);
         HtmlColumn valueColumn = new HtmlColumn();
         editableDataTable.getChildren().add(valueColumn);
 
-        // Create <h:outputText value="Value"> for <f:facet name="header"> of 'Value' column.
+      //   Create <h:outputText value="Value"> for <f:facet name="header"> of 'Value' column.
         HtmlOutputText valueHeader = new HtmlOutputText();
         valueHeader.setValue("Value");
         valueColumn.setHeader(valueHeader);
@@ -162,7 +163,7 @@ form.getChildren().add(dataTable);
         HtmlInputText valueInput = new HtmlInputText();
         valueInput.setId("value"); // Custom ID is required in dynamic UIInput and UICommand.
         valueInput.setValueExpression("value",
-            createValueExpression("#{dataItem.value}", String.class));
+            createValueExpression("#{dataItem.oceano}", String.class));
         valueColumn.getChildren().add(valueInput);
 
         // Add the datatable to <h:panelGroup binding="#{myBean.editableDataTableGroup}">.

@@ -16,7 +16,7 @@ public class Oceano {
     public Oceano() {
     }
 
-    public Oceano(String oceano, String idoceano) {
+    public Oceano(String idoceano, String oceano) {
         this.oceano = oceano;
         this.idoceano = idoceano;
     }
