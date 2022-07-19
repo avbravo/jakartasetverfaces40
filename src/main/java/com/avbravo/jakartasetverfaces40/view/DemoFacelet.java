@@ -14,10 +14,12 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.faces.annotation.View;
 import jakarta.faces.component.UIColumn;
 import jakarta.faces.component.UIComponent;
+import jakarta.faces.component.UINamingContainer;
 import jakarta.faces.component.UIOutput;
 import jakarta.faces.component.html.*;
 import jakarta.faces.context.FacesContext;
 import jakarta.faces.el.ValueBinding;
+import jakarta.faces.model.ListDataModel;
 import jakarta.faces.view.facelets.Facelet;
 import java.util.ArrayList;
 
@@ -94,6 +96,47 @@ public class DemoFacelet extends Facelet {
           dataTable.getChildren().add(column);
         }
 form.getChildren().add(dataTable);
+
+/**
+ * Otro datatable
+ */
+//HtmlDataTable data;
+//    HtmlOutputText output0;
+//    ArrayList<String> hobbits = new ArrayList<String>();
+//    hobbits.add("bilbo");
+//    hobbits.add("frodo");
+//    hobbits.add("merry");
+//    hobbits.add("pippin");
+//    hobbits.add("lumpy");
+//    ListDataModel dataModel = new ListDataModel(hobbits);
+//    panel = new UINamingContainer();
+//    panel.setId(panelId);
+//    form.getChildren().add(panel);
+//    input0 = new HtmlInputText();
+//    input0.setId("input0");
+//    panel.getChildren().add(input0);
+//    input1 = new HtmlInputText();
+//    input1.setId("input1");
+//    panel.getChildren().add(input1);
+//    data = new HtmlDataTable();
+//    data.setId("data");
+//    panel.getChildren().add(data);
+//    data.setValue(dataModel);
+//    data.setVar("hobbitName");
+//    String dataId = data.getClientId();
+//  HtmlColumn  column0 = new HtmlColumn();
+//   column0.setId("column0");
+//    data.getChildren().add(column0);
+//    output0 = new HtmlOutputText();
+//    output0.setId("output0");
+//    output0.setValue(getFacesContext().getApplication().getExpressionFactory().createValueExpression(getFacesContext().getELContext(), "#{hobbitName}", String.class));
+//    column0.getChildren().add(output0);
+//  HtmlCommandButton  button0 = new HtmlCommandButton();
+//    button0.setId("button0");
+//    panel.getChildren().add(button0);
+//  HtmlCommandButton  button1 = new HtmlCommandButton();
+//    button1.setId("button1");
+//    panel.getChildren().add(button1);
         /**
          * CommandButton
          */
