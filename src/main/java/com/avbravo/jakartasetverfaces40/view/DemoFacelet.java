@@ -226,6 +226,17 @@ public class DemoFacelet extends Facelet {
 //  HtmlCommandButton  button1 = new HtmlCommandButton();
 //    button1.setId("button1");
 //    panel.getChildren().add(button1);
+
+for(Oceano oceano: list){
+     HtmlOutputLabel label1 = components.create(HtmlOutputLabel.COMPONENT_TYPE);
+        label1.setValue(oceano.getIdoceano());
+        form.getChildren().add(label1);
+        
+}
+/**
+ * 
+ */
+
         /**
          * CommandButton
          */
