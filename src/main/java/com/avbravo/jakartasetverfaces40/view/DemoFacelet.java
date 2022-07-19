@@ -63,7 +63,13 @@ public class DemoFacelet extends Facelet {
 
         output.setValue("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
         rootChildren.add(output);
+        
+        //
+         UIOutput output2 = new UIOutput();
 
+        output2.setValue("<h:outputStylesheet library=\"webjars\" name=\"primeflex/3.0.1/primeflex.min.css\" />");
+        rootChildren.add(output2);
+                
         HtmlBody body = components.create(HtmlBody.COMPONENT_TYPE);
         rootChildren.add(body);
         /**
@@ -72,6 +78,15 @@ public class DemoFacelet extends Facelet {
         HtmlForm form = components.create(HtmlForm.COMPONENT_TYPE);
         form.setId("form");
         body.getChildren().add(form);
+        
+        /*
+        
+        */
+         
+        
+        /**
+         * 
+         */
 
         HtmlOutputLabel label = components.create(HtmlOutputLabel.COMPONENT_TYPE);
         label.setValue("Enter your name");
